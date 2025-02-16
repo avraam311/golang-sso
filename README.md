@@ -49,10 +49,16 @@ Golang SSO — это модуль для реализации системы е
       "email": "user@example.com",
       "password": "your_password"
     }
+      - Тело ответа:
+        json
+    {
+      "userID": "3",
+      "err": "nil",
+    }
     
 ### Вход в систему
 
-- **POST /api/v1/login**
+- **Login**
   
   - Тело запроса:
     json
@@ -61,13 +67,28 @@ Golang SSO — это модуль для реализации системы е
       "password": "your_password",
       "appID": 123
     }
+  - Тело ответа:
+        json
+    {
+      "token": "ufw984hf938hf9",
+      "err": "nil",
+    }
     
 ### Проверка прав администратора
 
-- **GET /api/v1/users/{userID}/is-admin**
+- **IsAdmin**
   
-  - Параметры URL:
-    - userID: ID пользователя для проверки.
+    - Тело запроса:
+    json
+    {
+      "userID": "3",
+    }
+      - Тело ответа:
+        json
+    {
+      "bool": "true",
+      "err": "nil",
+    }
 
 ---
 
